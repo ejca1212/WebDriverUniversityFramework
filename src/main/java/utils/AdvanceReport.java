@@ -33,8 +33,6 @@ public class AdvanceReport extends DriverFactory {
         OutputStream os = null;
 
         try {
-
-            if (source != null) {
                 is = new FileInputStream(source);
                 os = new FileOutputStream(destination);
 
@@ -44,9 +42,6 @@ public class AdvanceReport extends DriverFactory {
                 while ((length = is.read(buffer)) > 0) {
                     os.write(buffer, 0, length);
                 }
-            } else {
-                System.out.println("There is no source file");
-            }
 
         }catch (Exception e){
             System.out.println("Issue Copying file: " + e.getMessage() );
@@ -62,8 +57,11 @@ public class AdvanceReport extends DriverFactory {
         File source = new File(System.getProperty("user.dir") + "/output/report.html");
         File dest = new File(System.getProperty("user.dir") + "/output/Report_" + date + ".html");
 
-        copyFileUsingStream(source, dest);
-
+        if (source.exists()) {
+            copyFileUsingStream(source, dest);
+        }else {
+            System.out.println("Report File doesn't exist or was not created");
+        }
     }
 
 }

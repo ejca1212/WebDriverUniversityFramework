@@ -9,10 +9,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterClass;
 import utils.AdvanceReport;
-
 import java.io.File;
-import java.io.IOException;
-import java.util.Date;
+
 
 @RunWith(Cucumber.class)
 
@@ -25,7 +23,7 @@ import java.util.Date;
 
 public class MainRunner  extends AbstractTestNGCucumberTests {
     @AfterClass
-    public static void writeExtentReport () throws IOException {
+    public static void writeExtentReport () throws Exception {
         Reporter.loadXMLConfig(new File(System.getProperty("user.dir") + "/src/main/java/utils/ReportsConfig.xml"));
         AdvanceReport.copyLatestExtentReport();
     }
