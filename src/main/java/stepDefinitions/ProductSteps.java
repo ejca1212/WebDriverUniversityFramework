@@ -25,6 +25,6 @@ public class ProductSteps extends DriverFactory {
     public void user_should_be_presented_with_a_promo_alert() throws  Exception{
         Thread.sleep(4000);
         driver.findElement(By.xpath("//button[text()='Proceed']")).click();
-        ;
+    }
     }
 }
