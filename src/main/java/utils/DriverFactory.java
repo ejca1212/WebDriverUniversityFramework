@@ -46,7 +46,7 @@ public class DriverFactory {
 
                         // Create a new driver object
                         driver = new ChromeDriver();
-                        driver.manage().window().maximize();
+                        //driver.manage().window().maximize();
                         break;
 
                     case "ie":

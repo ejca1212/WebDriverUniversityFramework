@@ -15,13 +15,13 @@ public class ProductSteps extends DriverFactory {
     }
 
     @When("^User click on \"([^\"]*)\"$")
-    public void user_click_on(String button) throws InterruptedException{
+    public void user_click_on(String button) throws Exception{
         Thread.sleep(3000);
-        driver.findElement(By.id(button)).click();
+        driver.findElement(By.cssSelector(button)).click();
     }
 
     @Then("^User should be presented with a promo alert$")
-    public void user_should_be_presented_with_a_promo_alert() throws  InterruptedException{
+    public void user_should_be_presented_with_a_promo_alert() throws  Exception{
         Thread.sleep(4000);
         driver.findElement(By.xpath("//button[text()='Proceed']")).click();
     }

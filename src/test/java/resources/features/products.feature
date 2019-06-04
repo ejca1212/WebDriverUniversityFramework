@@ -7,4 +7,4 @@ Feature: Products page
 
     Examples:
       | url                                                            | button                   |
-      | http://webdriveruniversity.com/Page-Object-Model/products.html | container-special-offers |
+      | http://webdriveruniversity.com/Page-Object-Model/products.html | #special-offers > a:nth-child(1) |

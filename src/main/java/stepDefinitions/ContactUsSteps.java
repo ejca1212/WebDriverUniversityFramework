@@ -44,6 +44,7 @@ public class ContactUsSteps extends DriverFactory {
     public void i_click_on_the_submit_button() throws Exception{
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input.contact_button:nth-child(2)")).click();
+        Thread.sleep(2000);
     }
 
     @Then("^The information should successfylly be submitted via the contact us form$")
