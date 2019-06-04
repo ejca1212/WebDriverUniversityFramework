@@ -22,7 +22,7 @@ public class ProductSteps extends DriverFactory {
 
     @Then("^User should be presented with a promo alert$")
     public void user_should_be_presented_with_a_promo_alert() throws  InterruptedException{
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath("//button[text()='Proceed']")).click();
     }
 }
