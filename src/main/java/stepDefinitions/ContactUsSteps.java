@@ -43,7 +43,7 @@ public class ContactUsSteps extends DriverFactory {
     @When("^I click on the submit button$")
     public void i_click_on_the_submit_button() throws Exception{
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=“form_buttons”]/input[2]")).click();
+        driver.findElement(By.cssSelector("input.contact_button:nth-child(2)")).click();
     }
 
     @Then("^The information should successfylly be submitted via the contact us form$")
