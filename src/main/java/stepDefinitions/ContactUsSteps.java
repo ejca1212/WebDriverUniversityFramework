@@ -6,6 +6,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.DriverFactory;
 import java.util.List;
@@ -41,10 +43,9 @@ public class ContactUsSteps extends DriverFactory {
     }
 
     @When("^I click on the submit button$")
-    public void i_click_on_the_submit_button() throws Exception{
-        Thread.sleep(2000);
+    public void i_click_on_the_submit_button(){
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector("input.contact_button:nth-child(2)")));
         driver.findElement(By.cssSelector("input.contact_button:nth-child(2)")).click();
-        Thread.sleep(2000);
     }
 
     @Then("^The information should successfylly be submitted via the contact us form$")

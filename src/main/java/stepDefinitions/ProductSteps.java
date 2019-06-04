@@ -3,8 +3,9 @@ package stepDefinitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DriverFactory;
 
 public class ProductSteps extends DriverFactory {
@@ -15,8 +16,8 @@ public class ProductSteps extends DriverFactory {
     }
 
     @When("^User click on \"([^\"]*)\"$")
-    public void user_click_on(String button) throws Exception{
-        Thread.sleep(3000);
+    public void user_click_on(String button){
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(button)));
         driver.findElement(By.cssSelector(button)).click();
     }
 
